@@ -1,0 +1,61 @@
+//286 by sir/287
+// singly circular linked list
+//InsertFirst
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct Node
+{
+    int data;
+    struct node *next;
+}NODE, *PNODE, **PPNODE;
+
+void InsertFirst(PPNODE Head, PPNODE Tail, int No)
+{
+    PNODE newn = NULL;
+    newn = (PNODE)malloc(sizeof(NODE));
+
+    newn->data = No;
+    newn->next = NULL;
+
+    if((*Head == NULL)&&(*Tail == NULL))  //LL is empty
+    {
+        *Head = newn;
+        *Tail = newn;
+    }
+    else    // LL contains atleast one node
+    {
+        newn->next = *Head;
+        *Head = newn;  
+    }
+    (*Tail)->next = *Head;
+}
+
+void InsertLast(PPNODE Head, PPNODE Tail, int No)
+{}
+
+void InsertAtPos(PPNODE Head, PPNODE Tail, int No, int iPos)
+{}
+
+void DeleteFirst(PPNODE Head, PPNODE Tail)
+{}
+
+void DeleteLast(PPNODE Head, PPNODE Tail)
+{}
+
+void DeleteAtPos(PPNODE Head, PPNODE Tail, int iPos)
+{}
+int Count(PNODE Head, PNODE Tail)
+{
+    return 0;
+}
+void Display(PNODE Head, PNODE Tail)
+{}
+
+int main()
+{
+    PNODE First = NULL;
+    PNODE Last = NULL;      //#
+
+    return 0;
+}
